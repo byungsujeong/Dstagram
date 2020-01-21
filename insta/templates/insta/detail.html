@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}- 상세화면입니다.{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 panel panel-default">
+
+                <p><img src="{{photo.photo.url}}" style="width:100%;"></p>
+                <button type="button" class="btn btn-xs btn-info">
+                    {{photo.author.username}}</button>
+                <p>{{photo.text|linebreaksbr}}</p>
+                <p class="text-right">
+                    <a href=""
+                    class="btn btn-xs btn-success">댓글달기</a>
+                </p>
+
+            </div>
+        </div>
+
+{% endblock %}

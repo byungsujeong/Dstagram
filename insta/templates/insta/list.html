@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}- List{% endblock %}
+
+{% block content %}
+    <img src="https://jbsinsta5.s3.ap-northeast-2.amazonaws.com/static/insta/2019/11/13/car1.gif">
+    {% for post in list %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 panel panel-default">
+                <p><img src="{{post.photo.url}}" style="width:100%;"></p>
+                <button type="button" class="btn btn-xs btn-info">
+                    {{post.author.username}}</button>
+                <p>{{post.text|linebreaksbr}}</p>
+                <p class="text-right">
+                    <a href="insta/detail/{{post.id}}"
+                    class="btn btn-xs btn-success">댓글달기</a>
+                </p>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+    {% endfor %}
+{% endblock %}
